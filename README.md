@@ -5,6 +5,8 @@
   <img src="https://github.com/xabilopalf/GAMANN-Vir/blob/main/Logo_GAMANN-Vir.pdf"  alt=" "/>
 </p>
 
+![Logo](Logo_GAMANN-Vir.pdf)
+
 The present document is part of a larger project that aims to analyze the temporal patterns of microorganisms, including viruses, in a 20-year time series. The project is divided into three main parts: 
 
   ##### 1) [Anomaly analyses](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#1-anomaly-analysis)
