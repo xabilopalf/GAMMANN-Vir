@@ -2,10 +2,9 @@
 # GAMANN-Vir
 
 <p align="center">
-  <img src="https://github.com/xabilopalf/GAMANN-Vir/blob/main/Logo_GAMANN-Vir.pdf"  alt=" "/>
+  <img src="https://github.com/xabilopalf/GAMANN-Vir/blob/main/Logo_GAMANN-Vir.png"  alt=" "/>
 </p>
 
-![Logo](Logo_GAMANN-Vir.pdf)
 
 The present document is part of a larger project that aims to analyze the temporal patterns of microorganisms, including viruses, in a 20-year time series. The project is divided into three main parts: 
 
