@@ -9,7 +9,7 @@ The present document is part of a larger project that aims to analyze the tempor
 
 -  [Anomaly analyses](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#1-anomaly-analysis)
 -  [Generalized Additive Models (GAMs) ](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#2-gams-generalized-additive-models)
--  Artificial Neural Networks (ANNs). 
+-  [Artificial Neural Networks (ANNs)](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#3-machine-learning-artificial-neural-networks-anns)
 
 This document focuses on the third part, which aims to predict the viral abundance time series through the use of ANNs. The document is structured as follows: 
 
