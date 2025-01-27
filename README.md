@@ -19,7 +19,7 @@ Anomaly analysis involves detecting data points or observations that deviate sig
         $$ p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right) $$
 
   Where:
-  - $$ \( p'(t) \) $$ is the anomaly for the given time \( t \),
+  - $$\( p'(t) \)$$ is the anomaly for the given time \( t \),
   - $$ \( P(t) \) is the observed value at time \( t \), $$
   - $$ \( \bar{P} \) is the interannual mean for the month corresponding to time \( t \). $$
 
