@@ -1,5 +1,5 @@
 
-# Virus Time Series: Modelling time series with GAMs and ANNs
+# GAMANN-Vir
 
 <p align="center">
   <img src="https://github.com/xabilopalf/Virus_Time_Series_GAM-ANN/blob/main/Imagen%201.png"  alt=" "/>
