@@ -11,12 +11,12 @@ Anomaly analysis involves detecting data points or observations that deviate sig
    - **Monthly Anomaly Calculation:** For each monthly observation, the anomaly is calculated as the base 10 logarithm of the ratio between the value of that month and the corresponding interannual mean for the same month.
 
 
-$$ p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right) $$
+        $$ p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right) $$
 
-Where:
-- \( p'(t) \) is the anomaly for the given time \( t \),
-- \( P(t) \) is the observed value at time \( t \),
-- \( \bar{P} \) is the interannual mean for the month corresponding to time \( t \).
+  Where:
+  - \( p'(t) \) is the anomaly for the given time \( t \),
+  - \( P(t) \) is the observed value at time \( t \),
+  - \( \bar{P} \) is the interannual mean for the month corresponding to time \( t \).
 
        
 - **Visualization:**
