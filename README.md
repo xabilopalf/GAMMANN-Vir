@@ -55,11 +55,9 @@ This process helps to identify and visualize any significant deviations in the d
        
 
 - **What the [`02_GAM_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/02_GAM_analysis.R) script does:**
-
-
-- **Temporal partial effect GAMMs** : First, a GAMM is fitted to model viral abundance, accounting for seasonality and long-term trends. Then, additional GAMs are automatically generated for other key variables using the fit_gams() function, and all models are visualized with gam_plots().
-- **Conditional GAMMs** : Next, an inflection point is introduced to assess potential shifts in the temporal relationship of viral abundance.
-- **Mixed partial effect GAMMs** : Finally, partial GAMs are fitted to explore the influence of nutrients, hosts, and environmental variables on viral abundance. Each model is visualized through plots and validated using statistical diagnostics to assess model fit and potential improvements.
+  - **Temporal partial effect GAMMs** : First, a GAMM is fitted to model viral abundance, accounting for seasonality and long-term trends. Then, additional GAMs are automatically generated for other key variables using the fit_gams() function, and all models are visualized with gam_plots().
+  - **Conditional GAMMs** : Next, an inflection point is introduced to assess potential shifts in the temporal relationship of viral abundance.
+  - **Mixed partial effect GAMMs** : Finally, partial GAMs are fitted to explore the influence of nutrients, hosts, and environmental variables on viral abundance. Each model is visualized through plots and validated using statistical diagnostics to assess model fit and potential improvements.
 
 
 **References:**
