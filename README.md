@@ -58,11 +58,11 @@ This process helps to identify and visualize any significant deviations in the d
 
 This script applies Generalized Additive Models (GAMs) to analyze viral abundance in relation to temporal factors (both seasonal and interannual) and various environmental and biological variables: 
 
-  - <u>*Temporal partial effect GAMMs*</u> : First, a GAMM is fitted to model viral abundance, accounting for seasonality and long-term trends. Then, additional GAMs are automatically generated for other key variables using the fit_gams() function, and all models are visualized with gam_plots().
+  - _*Temporal partial effect GAMMs*_ : First, a GAMM is fitted to model viral abundance, accounting for seasonality and long-term trends. Then, additional GAMs are automatically generated for other key variables using the fit_gams() function, and all models are visualized with gam_plots().
 
-  - <u> *Conditional GAMMs* </u> : Next, an inflection point is introduced to assess potential shifts in the temporal relationship of viral abundance.
+  - _*Conditional GAMMs*_ : Next, an inflection point is introduced to assess potential shifts in the temporal relationship of viral abundance.
 
-  - <u> *Mixed partial effect GAMMs* </u> : Finally, partial GAMs are fitted to explore the influence of nutrients, hosts, and environmental variables on viral abundance. Each model is visualized through plots and validated using statistical diagnostics to assess model fit and potential improvements.
+  - _*Mixed partial effect GAMMs*_ : Finally, partial GAMs are fitted to explore the influence of nutrients, hosts, and environmental variables on viral abundance. Each model is visualized through plots and validated using statistical diagnostics to assess model fit and potential improvements.
 
 
 **References:**
