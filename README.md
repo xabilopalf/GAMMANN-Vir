@@ -49,9 +49,9 @@ This process helps to identify and visualize any significant deviations in the d
   - These models are **great for visualization**, allowing us to see the **partial effects of each independent variable**.
 
    We can:
-       -  Include categorical variables and interactions.
-       -  Use **different types of distributions** (not just Gaussian) for the response variable.
-       -  Account for correlations between observations (like repeated measures or nested designs) using mixed models.
+      - Include categorical variables and interactions.
+      - Use **different types of distributions** (not just Gaussian) for the response variable.
+      - Account for correlations between observations (like repeated measures or nested designs) using mixed models.
        
 
 - **What the [`02_GAM_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/02_GAM_analysis.R) script does:**
