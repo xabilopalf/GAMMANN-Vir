@@ -40,6 +40,22 @@ This process helps to identify and visualize any significant deviations in the d
   
   ## 2) GAMs: Generalized Additive Models
 
+  **Why Use GAMs?**
+
+1.  The relationship between predictor variables (i.e., independent) and the response variable (i.e., dependent) does **not need to be linear**.
+
+2.  We **do not need** to know the **functional form of the relationship** in advance.
+
+3.  They are highly flexible models that allow the interpretation (graphically) of partial effects of each independent variable.
+
+4.  We can:
+
+     - Include categorical predictors and interactions.
+
+     - Use distributions other than normal for the dependent variable.
+
+     - Include correlations between observations (e.g., repeated measures, nested designs) - mixed models.
+
 **References:**
 -   [Dr. Victoria Quiroga's GAMs Lecture](https://limno-con-r.github.io/libro/gam.html)
 -   [R course](https://noamross.github.io/gams-in-r-course/)
