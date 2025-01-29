@@ -43,15 +43,12 @@ This process helps to identify and visualize any significant deviations in the d
   
   ## 2) GAMMs: Generalized Additive Models
 
-  **Why Use GAMs?**
+- **Why Use GAMs?**
+  - The **relationship** between independent and dependent variables **doesn't have to be linear**.
+  - We don’t need to know the exact mathematical form of the relationship beforehand.
+  - These models are **great for visualization**, allowing us to see the **partial effects of each independent variable**.
 
-   The **relationship** between independent and dependent variables **doesn't have to be linear**.
-
-   We don’t need to know the exact mathematical form of the relationship beforehand.
-
-   These models are great for visualization, allowing us to see the **partial effects of each independent variable**.
-
-   They let us:
+   We can:
        -  Include categorical variables and interactions.
        -  Use **different types of distributions** (not just Gaussian) for the response variable.
        -  Account for correlations between observations (like repeated measures or nested designs) using mixed models.
