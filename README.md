@@ -42,7 +42,10 @@ This process helps to identify and visualize any significant deviations in the d
 -   [The ICES Phytoplankton & Microbial Plankton Status Report](https://wgpme.net/plankton-status-report) *(Explanation of how anomalies are calculated)*
 
   </n>
-  
+  </n>
+  </n>
+  </n>
+  </n>
   ## 2) GAMMs: Generalized Additive Models
 
   **Why Use GAMs?**
