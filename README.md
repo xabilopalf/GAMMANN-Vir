@@ -41,27 +41,31 @@ This process helps to identify and visualize any significant deviations in the d
 -   [Anomalies by NOAA](https://www.ncei.noaa.gov/access/monitoring/dyk/anomalies-vs-temperature)
 -   [The ICES Phytoplankton & Microbial Plankton Status Report](https://wgpme.net/plankton-status-report) *(Explanation of how anomalies are calculated)*
   
-  ## 2) GAMs: Generalized Additive Models
+  ## 2) GAMMs: Generalized Additive Models
 
   **Why Use GAMs?**
 
-1.  The relationship between predictor variables (i.e., independent) and the response variable (i.e., dependent) does **not need to be linear**.
+   The **relationship** between independent and dependent variables **doesn't have to be linear**.
 
-2.  We **do not need** to know the **functional form of the relationship** in advance.
+   We don’t need to know the exact mathematical form of the relationship beforehand.
 
-3.  They are highly flexible models that allow the interpretation (graphically) of partial effects of each independent variable.
+   These models are great for visualization, allowing us to see the **partial effects of each independent variable**.
 
-4.  We can:
-
-     - Include categorical predictors and interactions.
-
-     - Use distributions other than normal for the dependent variable.
-
-     - Include correlations between observations (e.g., repeated measures, nested designs) - mixed models.
+   They let us:
+       -  Include categorical variables and interactions.
+       -  Use **different types of distributions** (not just Gaussian) for the response variable.
+       -  Account for correlations between observations (like repeated measures or nested designs) using mixed models.
+       
 
 - **What the [`02_GAM_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/02_GAM_analysis.R) script does:** 
 
-[...]
+This script applies Generalized Additive Models (GAMs) to analyze viral abundance in relation to temporal factors (both seasonal and interannual) and various environmental and biological variables: 
+
+   - *Temporal partial effect GAMMs*: First, a GAMM is fitted to model viral abundance, accounting for seasonality and long-term trends. Then, additional GAMs are automatically generated for other key variables using the fit_gams() function, and all models are visualized with gam_plots().
+
+   - *Conditional GAMMs*: Next, an inflection point is introduced to assess potential shifts in the temporal relationship of viral abundance.
+
+   - *Mixed partial effect GAMMs*: Finally, partial GAMs are fitted to explore the influence of nutrients, hosts, and environmental variables on viral abundance. Each model is visualized through plots and validated using statistical diagnostics to assess model fit and potential improvements.
 
 
 **References:**
