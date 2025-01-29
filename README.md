@@ -37,6 +37,9 @@ Anomaly analysis involves detecting data points or observations that deviate sig
 
 This process helps to identify and visualize any significant deviations in the data, aiding in the detection of potential errors or notable events.
 
+
+
+
   
   ## 2) GAMs: Generalized Additive Models
 
