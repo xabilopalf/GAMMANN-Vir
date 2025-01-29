@@ -39,6 +39,11 @@ This process helps to identify and visualize any significant deviations in the d
 
   
   ## 2) GAMs: Generalized Additive Models
+
+**References:**
+-   [Dr. Victoria Quiroga's GAMs Lecture](https://limno-con-r.github.io/libro/gam.html)
+-   [R course](https://noamross.github.io/gams-in-r-course/)
+-   [Oficial R documentation](https://cran.r-project.org/web/packages/gam/gam.pdf)
   
   ## 3) Machine Learning: Artificial Neural Networks (ANNs)
   
