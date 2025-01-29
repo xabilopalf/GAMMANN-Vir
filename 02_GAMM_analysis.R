@@ -1,4 +1,4 @@
-# 02_GAM_analysis.R
+# 02_GAMM_analysis.R
 
 
 # 1. Load the necessary libraries
@@ -39,9 +39,9 @@ df_gam$TIME <- NULL
 
 
 
-# 6. Modelling the Viral Abundance GAM
+# 6. Modelling the Viral Abundance GAMM
 
-# Fit the GAM model
+# Fit the GAMM model
 gam_AbunVir<-gamm(AbunVir ~ s(Month, bs="cc") + s(Days, bs="cr", k=20) + ti(Month,Days, bs=c("cc","cr")), family=quasipoisson , correlation = corCAR1(form = ~ Days), data = df_gam)
 
 # Check the model
@@ -84,7 +84,7 @@ gam_plots <- function(variables, save = FALSE, path = getwd()) {
     var_name <- variables[i]
     gam_name <- paste0("gam_", var_name)
     
-    # Check if the GAM object exists in the GlobalEnv
+    # Check if the GAMM object exists in the GlobalEnv
     if (exists(gam_name, envir = .GlobalEnv)) {
       model <- get(gam_name, envir = .GlobalEnv)
       
