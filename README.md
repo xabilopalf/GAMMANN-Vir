@@ -67,5 +67,21 @@ This process helps to identify and visualize any significant deviations in the d
 -   [Oficial R documentation](https://cran.r-project.org/web/packages/gam/gam.pdf)
   
   ## 3) Machine Learning: Artificial Neural Networks (ANNs)
+
+- **Why Use GAMs?**
+
+- **What the [`03_ANN_time_series.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/03_ANN_time_series.R) script does:**
+
+This script automates the process of tuning, evaluating, and optimizing neural networks to model viral abundance using various combinations of environmental and biological predictors.
+
+This script uses artificial neural networks (ANN) to model viral abundance with environmental and biological variables. The key processes are:
+
+  - **Hyperparameter optimization** : Model parameters are tuned using grid search, accelerated by parallelization to improve efficiency. Finding the right tuning parameters for a machine learning model can be challenging. One issue we might face is **overfitting**, where the model becomes too tailored to the training data, leading to poor performance. On the other hand, we could also run into **underfitting**, where the model doesn't learn enough from the training data, which also results in high error rates when applied to new data.
+
+  - **Testing predictor combinations** : Models are trained with different combinations of variables to identify the best predictors for viral abundance. The script creates every possible combination of predictors and trains a model for each one. Then, it tests each model using cross-validation to make sure the results are reliable.
+
+  - **Performance evaluation and importance analysis** : The model's performance is evaluated using metrics like R² and RMSE to assess its accuracy, and the relative importance of each predictor is calculated, identifying the most influential factors. Once the model is trained, its performance is evaluated .
+
+Results and performance metrics are stored for further analysis.
   
   ## 4) References.
