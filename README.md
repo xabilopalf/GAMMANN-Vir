@@ -8,9 +8,9 @@
 
 The present document is part of a larger project that aims to analyze the temporal patterns of microorganisms, including viruses, in a 20-year time series. The project is divided into three main parts: 
 
-  ##### 1) [Anomaly analyses](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#1-anomaly-analysis)
-  ##### 2) [Generalized Additive Models (GAMs) ](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#2-gams-generalized-additive-models)
-  ##### 3) [Artificial Neural Networks (ANNs)](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#3-machine-learning-artificial-neural-networks-anns)
+  - 1) [Anomaly analyses](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#1-anomaly-analysis)
+  - 2) [Generalized Additive Models (GAMs) ](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#2-gams-generalized-additive-models)
+  - 3) [Artificial Neural Networks (ANNs)](https://github.com/xabilopalf/GAMANN-Vir/blob/main/README.md#3-machine-learning-artificial-neural-networks-anns)
 
 This document focuses on the third part, which aims to predict the viral abundance time series through the use of ANNs. The document is structured as follows: 
 
@@ -18,7 +18,7 @@ This document focuses on the third part, which aims to predict the viral abundan
 
 Anomaly analysis involves detecting data points or observations that deviate significantly from expected patterns or normal behavior in a dataset. It is commonly used in time-series data, such as environmental or sensor readings, to identify unusual fluctuations or outliers that might indicate significant events or errors.
 
-- **What the [`01_anomaly_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/01_anomaly_analysis.R) script does:** 
+- **What the [`01_Anomaly_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/01_Anomaly_analysis.R) script does:** 
 
    - **Monthly Calculation of Interannual Mean:** For each month of the year (January, February, etc.), the mean of all available observations across the years in the time series is calculated. For example, the mean of all January temperatures over the years.
    - **Monthly Anomaly Calculation:** For each monthly observation, the anomaly is calculated as the base 10 logarithm of the ratio between the value of that month and the corresponding interannual mean for the same month.
@@ -54,7 +54,7 @@ This process helps to identify and visualize any significant deviations in the d
     - Account for correlations between observations (like repeated measures or nested designs) using mixed models. In our case, especially useful for **data autocorrelation in time-series**. 
        
 
-- **What the [`02_GAM_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/02_GAM_analysis.R) script does:**
+- **What the [`02_GAMM_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/02_GAMM_analysis.R) script does:**
   
   - **Temporal partial effect GAMMs** : First, a GAMM is fitted to model viral abundance, accounting for seasonality and long-term trends. Then, additional GAMs are automatically generated for other key variables using the fit_gams() function, and all models are visualized with gam_plots().
   - **Conditional GAMMs** : Next, an inflection point is introduced to assess potential shifts in the temporal relationship of viral abundance.
