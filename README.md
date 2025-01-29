@@ -59,6 +59,11 @@ This process helps to identify and visualize any significant deviations in the d
 
      - Include correlations between observations (e.g., repeated measures, nested designs) - mixed models.
 
+- **What the [`02_GAM_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/02_GAM_analysis.R) script does:** 
+
+[...]
+
+
 **References:**
 -   [Dr. Victoria Quiroga's GAMs Lecture](https://limno-con-r.github.io/libro/gam.html)
 -   [R course](https://noamross.github.io/gams-in-r-course/)
