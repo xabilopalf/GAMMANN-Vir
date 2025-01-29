@@ -1,3 +1,5 @@
+# 01_anomaly_analysis.R
+
 # 1. Load the necessary libraries
 
 required = c("readxl","tidyverse", "ggplot2", "dplyr")
@@ -21,24 +23,21 @@ data <- data %>% filter(Year != 2023)
 df_anom1 <- data %>% filter(!is.na(DATE)) 
 
 # 5. Function anomaly.table()
-#  5.1. Filter only numeric columns starting from "Temperature"
-#  5.2. Calculate the interannual mean for each variable and month
-#  5.3. Calculate the monthly anomaly
+# Calculate the interannual mean for each variable and month
+# Calculate the monthly anomaly
 
 anomaly.table <- function(df, no.log = c()) {
-  df %>%
-    # 5.1. Filter columns starting with "Temperature" up to the last column
-    select(Year, Month, starts_with("Temperature"):last_col()) %>%
+  df %>% select(Year, Month, starts_with("Temperature"):last_col()) %>%
     
-    # 5.2. Convert the dataframe to long format, with one row for each variable and month
+    # Adequate the data to long format
     pivot_longer(cols = -c(Year, Month), names_to = "Variable", values_to = "Value") %>%
     filter(!is.na(Value)) %>%
     
-    # 5.3. Calculate the monthly mean for each variable
+    # Calculate the monthly mean for each variable
     group_by(Variable, Month) %>%
     mutate(Mean_Monthly = mean(Value, na.rm = TRUE)) %>%
     
-    # 5.4. Calculate the monthly anomaly with conditional logic
+    # Calculate the monthly anomaly with conditional logic
     mutate(Anomaly_Monthly = ifelse(
       Variable %in% no.log,                # If the variable is in no.log
       Value - Mean_Monthly,                # No log10 for these variables
@@ -60,7 +59,6 @@ anomaly.table <- function(df, no.log = c()) {
 # 6. Apply the function to your dataset with variables that don't use log10
 df_anom2 <- anomaly.table(df_anom1, no.log = c("Temperature", "Salinity", "Secchi_Disk"))
 
-# 7. Convert all columns to general numeric format (no scientific notation)
 df_anom2 <- as.data.frame(lapply(df_anom2, function(x) format(x, scientific = FALSE)))
 df_anom2 <- as.data.frame(lapply(df_anom2, function(x) as.numeric(as.character(x))))
 
@@ -71,7 +69,7 @@ mean_year_anomaly <- df_anom2 %>%
 
 # 9. Create graphs to visualize the anomalies for each variable
 
-#  9.1. Plot the anomaly for a particular variable
+#  Plot particular variables of interest
 anom_plot <- ggplot(mean_year_anomaly, aes(x = Year, y = mean_year_anomaly[, 5])) + 
   geom_bar(stat = "identity", fill = ifelse(mean_year_anomaly[, 5] > 0, "#25326c", "lightblue"), 
            alpha = 0.85, color = "#25326c") +
@@ -86,16 +84,17 @@ anom_plot <- ggplot(mean_year_anomaly, aes(x = Year, y = mean_year_anomaly[, 5])
   geom_text(aes(label = paste("R2 = ", round(summary(lm(mean_year_anomaly[, 4] ~ Year))$r.squared, 2)), 
                 x = 2005, y = 2.5)) ; anom_plot
 
-#  9.2. Iterate over columns 4 to the end of the table to plot each variable
+
+#  Iterate for all variables
 for (i in 4:ncol(mean_year_anomaly)) {
-  # 9.2.1. Create the linear model for the current variable
+  # Linear model 
   formula <- as.formula(paste(colnames(mean_year_anomaly)[i], "~ Year"))
   model <- lm(formula, data = mean_year_anomaly)
   slope <- round(coef(model)[2], 2)
   intercept <- round(coef(model)[1], 2)
   r_squared <- round(summary(model)$r.squared, 2)
   
-  # 9.2.2. Create the plot for the variable
+  # Plot it!
   anom_plot <- ggplot(mean_year_anomaly, aes(x = Year, y = mean_year_anomaly[, i])) +
     geom_bar(stat = "identity", fill = ifelse(mean_year_anomaly[, i] > 0, "#25326c", "lightblue"), 
              alpha = 0.85, color = "#25326c") +
@@ -109,6 +108,6 @@ for (i in 4:ncol(mean_year_anomaly)) {
     geom_text(aes(label = paste("R2 = ", r_squared), 
                   x = 2005, y = (0.7 * max(mean_year_anomaly[, i]))))
   
-  # 9.2.3. Save the plot as an SVG file
+  # Save it as a SVG file
   ggsave(paste("anomalies_", colnames(mean_year_anomaly)[i], ".svg"), plot = anom_plot, width = 11, height = 6)
 }
