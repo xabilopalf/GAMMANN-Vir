@@ -37,9 +37,9 @@ Anomaly analysis involves detecting data points or observations that deviate sig
 
 This process helps to identify and visualize any significant deviations in the data, aiding in the detection of potential errors or notable events.
 
-
-
-
+**References:**
+-   [Anomalies by NOAA](https://www.ncei.noaa.gov/access/monitoring/dyk/anomalies-vs-temperature)
+-   [The ICES Phytoplankton & Microbial Plankton Status Report](https://wgpme.net/plankton-status-report) *(Explanation of how anomalies are calculated)*
   
   ## 2) GAMs: Generalized Additive Models
 
