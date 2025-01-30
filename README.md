@@ -85,7 +85,7 @@ This script uses artificial neural networks (ANN) to model viral abundance with 
 Results and performance metrics are stored for further analysis.
 
 **References:**
--   [Basics of Neural Networks: How many neurons I need?](https://www.yourdatateacher.com/2021/05/10/how-many-neurons-for-a-neural-network/) Este es un buen link para entender el número de neuronas necesarias en una red neuronal
+-   [Basics of Neural Networks: How many neurons I need?](https://www.yourdatateacher.com/2021/05/10/how-many-neurons-for-a-neural-network/) 
 -   [Artificial Neural Network using R Studio](https://medium.com/@sukmaanindita/artificial-neural-network-using-r-studio-3eb538fa39fb)
 -   [Visualizing neural networks in R](https://beckmw.wordpress.com/2013/11/14/visualizing-neural-networks-in-r-update/)
 -   [How to tune hyperparameters with R](https://www.projectpro.io/recipes/tune-hyper-parameters-grid-search-r)
