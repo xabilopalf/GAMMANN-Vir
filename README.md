@@ -70,7 +70,7 @@ This process helps to identify and visualize any significant deviations in the d
 
 - **Why Use GAMs?**
 
-- **What the [`03_ANN_time_series.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/03_ANN_time_series.R) script does:**
+- **What the [`03_ANN_time_series.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/03_ANNs_time_series.R) script does:**
 
 This script automates the process of tuning, evaluating, and optimizing neural networks to model viral abundance using various combinations of environmental and biological predictors.
 
