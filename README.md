@@ -89,9 +89,9 @@ Results and performance metrics are stored in **`log_Blanes_ANN_Fit_Metrics.tsv`
 
 The script generates the following visualizations to analyze the performance of the neural network models stored in **`log_Blanes_ANN_Fit_Metrics.tsv`**:
 
-  - **Scatter plot (RMSE vs R²): ** Compares the root mean square error (RMSE) and the coefficient of determination (R²) across models. Differentiates between models that include or exclude the "Year" variable.
-  - **Radar charts (Best 5% models with and without "Year"): ** Show the frequency of each predictor in the top 5% of models, separately for those that include and exclude "Year".
-  - **Boxplots (Predictor importance with and without "Year"): ** Display the relative importance of each predictor in the best 5% of models, based on Olden's method, for models both with and without "Year".
+  - **Scatter plot (RMSE vs R²):** Compares the root mean square error (RMSE) and the coefficient of determination (R²) across models. Differentiates between models that include or exclude the "Year" variable.
+  - **Radar charts (Best 5% models with and without "Year"):** Show the frequency of each predictor in the top 5% of models, separately for those that include and exclude "Year".
+  - **Boxplots (Predictor importance with and without "Year"):** Display the relative importance of each predictor in the best 5% of models, based on Olden's method, for models both with and without "Year".
 
 **References:**
 -   [Basics of Neural Networks: How many neurons I need?](https://www.yourdatateacher.com/2021/05/10/how-many-neurons-for-a-neural-network/) 
