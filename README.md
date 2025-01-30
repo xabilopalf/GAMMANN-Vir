@@ -84,6 +84,10 @@ This script uses artificial neural networks (ANN) to model viral abundance with 
 
 Results and performance metrics are stored in **`log_Blanes_ANN_Fit_Metrics.tsv`** for further analysis.
 
+
+- **What the [`04_ANN_visualization.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/04_ANN_visualization.R) script does:**
+
+
 **References:**
 -   [Basics of Neural Networks: How many neurons I need?](https://www.yourdatateacher.com/2021/05/10/how-many-neurons-for-a-neural-network/) 
 -   [Artificial Neural Network using R Studio](https://medium.com/@sukmaanindita/artificial-neural-network-using-r-studio-3eb538fa39fb)
