@@ -83,5 +83,12 @@ This script uses artificial neural networks (ANN) to model viral abundance with 
   - **Performance evaluation and importance analysis** : The model's performance is evaluated using metrics like R² and RMSE to assess its accuracy, and the relative importance of each predictor is calculated, identifying the most influential factors. Once the model is trained, its performance is evaluated .
 
 Results and performance metrics are stored for further analysis.
+
+**References:**
+-   [Basics of Neural Networks: How many neurons I need?](https://www.yourdatateacher.com/2021/05/10/how-many-neurons-for-a-neural-network/) Este es un buen link para entender el número de neuronas necesarias en una red neuronal
+-   [Artificial Neural Network using R Studio](https://medium.com/@sukmaanindita/artificial-neural-network-using-r-studio-3eb538fa39fb)
+-   [Visualizing neural networks in R](https://beckmw.wordpress.com/2013/11/14/visualizing-neural-networks-in-r-update/)
+-   [How to tune hyperparameters with R](https://www.projectpro.io/recipes/tune-hyper-parameters-grid-search-r)
+-   [Tuning hyperparameters in a neural network](https://f0nzie.github.io/machine_learning_compilation/tuning-hyperparameters-in-a-neural-network.html)
   
   ## 4) References.
