@@ -82,7 +82,7 @@ This script uses artificial neural networks (ANN) to model viral abundance with 
 
   - **Performance evaluation and importance analysis** : The model's performance is evaluated using metrics like R² and RMSE to assess its accuracy, and the relative importance of each predictor is calculated, identifying the most influential factors. Once the model is trained, its performance is evaluated .
 
-Results and performance metrics are stored for further analysis.
+Results and performance metrics are stored in **`log_Blanes_ANN_Fit_Metrics.tsv`** for further analysis.
 
 **References:**
 -   [Basics of Neural Networks: How many neurons I need?](https://www.yourdatateacher.com/2021/05/10/how-many-neurons-for-a-neural-network/) 
