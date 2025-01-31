@@ -1,4 +1,4 @@
-# 02_GAMM_analysis.R
+# 02_GAM_analysis.R
 
 
 # 1. Load the necessary libraries
@@ -15,19 +15,30 @@ for (i in required) {
 setwd()
 
 
-# 2. Read the data from an Excel file
-data <- read_excel("data.xlsx", sheet = "R_augmented")
+# 2. Load data
+data_gam <- read_excel("~/Desktop/FPI_Doctorado/04_Active_Projects/ANN-ts/ANNs_ts/DADES_DV_tot.xlsx",  
+           sheet = "R_augmented_table",col_types = c("numeric", 
+                                                     "text", "text", "text", "date", "text", 
+                                                     "numeric", "numeric", "numeric", "numeric", 
+                                                     "numeric", "numeric", "numeric", "numeric", 
+                                                     "numeric", "numeric", "numeric", "numeric", 
+                                                     "numeric", "numeric", "numeric", "numeric", 
+                                                     "numeric", "numeric", "numeric", "numeric", 
+                                                     "numeric", "numeric", "numeric", "numeric", 
+                                                     "numeric"))
+# 3. Filter the data to remove the year 2023
+data_gam <- data_gam %>% filter(Year != 2023)
 
-# 3. Remove rows with NA values in the DATE variable
-df_gam <- data %>% filter(!is.na(DATE)) 
+# 4. Remove rows with NA values in the DATE variable
+df_gam <- data_gam %>% filter(!is.na(DATE)) 
 
-# 4. Check missingness
+# 5. Check missingness
 aggr_plot <- aggr(df, col=c('navyblue','red'), numbers=TRUE, sortVars=TRUE, labels=names(df), cex.axis=.5, gap=3, ylab=c("Histogram of missing data","Pattern"))
 vis_miss(df, show_perc = F) + coord_flip()
 missmap(df)
 
 
-# 5. Data preparation: create Days variable to have Autocorrelation in the GAM model
+# 6. Data preparation: create Days variable to have Autocorrelation in the GAM model
 attach(df_gam)
 df_gam$DATE <- as.Date(df_gam$DATE, "%Y/%m/%d") # formato de fecha en inglés
 df_gam$Month <- as.numeric(format(df_gam$DATE,'%m')) # generar variable Mes
@@ -39,7 +50,7 @@ df_gam$TIME <- NULL
 
 
 
-# 6. Modelling the Viral Abundance GAM
+# 7. Modelling the Viral Abundance GAM
 
 # Fit the GAM model
 gam_AbunVir<-gamm(AbunVir ~ s(Month, bs="cc") + s(Days, bs="cr", k=20) + ti(Month,Days, bs=c("cc","cr")), family=quasipoisson , correlation = corCAR1(form = ~ Days), data = df_gam)
@@ -54,7 +65,7 @@ gam.check(gam_AbunVir$gam, type="pearson")
 
 
 
-# 7. Model the rest of the variables
+# 8. Model the rest of the variables
 
 ### DISCLAIMER: They should be modeled individually to understand the Daygnostics of the models and see if they need to be adjusted or change some parameter such as the k smoothness value, change the type of family (Gaussian, Quasipoisson, ...) or know if to add the interaction between variables.
 
@@ -117,7 +128,7 @@ gam_plots(variables, save = F)
 
 
 
-# 8. GAMM for Viral Abundance vs. Inflection Point
+# 9. GAM for Viral Abundance vs. Inflection Point
 
 
 # We will use the inflection point to divide the time series into two periods: pre-2012 and post-2012. We will then fit a GAM model to the viral abundance data, including the inflection point as a predictor variable. 
@@ -154,9 +165,9 @@ plot_smooth(condicional_Abunvir_gam$gam, view = "Month",
 
 
 
-# 9. Partial GAMMs
+# 10. Partial GAMs
 
-# Partial GAMM for Viral Abundance vs Nutrients
+# Partial GAM for Viral Abundance vs Nutrients
 
 mod_nutr<-gamm(AbunVir ~  s(PO4, bs = "cr") + s(NO2, bs = "cr") + s(NO3, bs = "cr"), family=quasipoisson , data = df_gam)
 
@@ -168,7 +179,7 @@ par(mfrow=c(2,2))
 gam.check(mod_nutr$gam, type="pearson")
 
 
-# Partial GAMM for Viral Abundance vs host
+# Partial GAM for Viral Abundance vs host
 
 mod_host<-gamm(AbunVir~  s(Bacteria_DAPI, bs="cr") + s(Abun_HNF, bs = "cr")  + s(Abun_PNF, bs = "cr") + s(Prochlorococcus, bs = "cr") + s(Synechococcus, bs = "cr") , family=quasipoisson , data = df_gam)
 
@@ -180,7 +191,7 @@ par(mfrow=c(2,2))
 gam.check(mod_host$gam, type="pearson")
 
 
-# Partial GAMM for Viral Abundance vs env.variables
+# Partial GAM for Viral Abundance vs env.variables
 
 mod_var_fq<-gamm(AbunVir~   s(Temperature, bs="cr") + s(Secchi_Disk, bs="cr", k=20)+   s(CHL, bs="cr") +  s(Salinity, bs="cr") , family=quasipoisson , data = df_gam)
 

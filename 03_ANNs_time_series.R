@@ -3,7 +3,7 @@ library(NeuralNetTools)
 library(nnet)
 library(caret)
 
-data_ann<- read_excel("data.xlsx")
+data_ann<- read_excel("DADES_DV_tot.xlsx", sheet = "R_augmented_table",col_types = c("numeric", "numeric", "text", "text", "date", "text", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric",  "numeric"))
 
 #data_ann <- data_ann %>% filter(Year != 2023) # we don't want data for 2023
 data_ann <- data_ann[which(data_ann$Year != 2023),] # we don't want data for 2023
@@ -156,6 +156,8 @@ df_zscale$ZPredicted_AbunVir<-best_net$fitted.values[,1]
 
 #Add the reverse transformed predicted values to the original data df
 data_ann_num$Predicted_AbunVir<-(df_zscale$ZPredicted_AbunVir*odf_col_sds["AbunVir"])+odf_col_means["AbunVir"]
+
+library(NeuralNetTools)
 
 #Calculate the importance of the predictors using the Olden method
 importance_olden<-olden(best_net,bar_plot=FALSE)

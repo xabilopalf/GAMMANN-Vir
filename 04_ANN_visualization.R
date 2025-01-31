@@ -1,4 +1,7 @@
+# 04_ANN_visualization.R
 
+
+# 1. Load the necessary libraries
 required = c("readr","tidyverse", "ggplot2", "dplyr", "fmsb")
 
 for (i in required) {
@@ -11,7 +14,7 @@ for (i in required) {
 setwd()
 
 
-# 1. Load data
+# Load data
 ann_output <- read_delim("~/Downloads/log_Blanes_ANN_Fit_Metrics.tsv", 
                          delim = "\t", escape_double = FALSE, 
                          trim_ws = TRUE)
