@@ -101,4 +101,8 @@ The script generates the following visualizations to analyze the performance of 
 -   [How to tune hyperparameters with R](https://www.projectpro.io/recipes/tune-hyper-parameters-grid-search-r)
 -   [Tuning hyperparameters in a neural network](https://f0nzie.github.io/machine_learning_compilation/tuning-hyperparameters-in-a-neural-network.html)
   
-  ## 4) References.
+  ## 4) PCA and RAPDs analysis
+
+ For this part, we also carried out a general PCA and correlogram to get an overall view of the variables.
+ 
+ In addition, we performed Randomly Amplified Polymorphic DNA Polymerase Chain Reaction (RAPD-PCR) analysis. Jaccard dissimilarities between the samples were calculated based on the presence or absence of bands. This helped us visualize the differences in viral communities across different seasons. Everyhing can be found in the **[`05_PCA_and_RAPDs_analysis.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/05_PCA_and_RAPDs_analysis.R )**
