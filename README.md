@@ -70,7 +70,7 @@ This process helps to identify and visualize any significant deviations in the d
 
 - **Why Use ANNs?**
 
-Machine learning is a powerful tool for uncovering patterns in microbial communities, but still is considered as a black box, and its complexity often comes at the cost of interpretability. Many models function as black boxes, prioritizing accuracy over transparency, making it difficult to understand. This scripts are intended to extract meaningful biological insights, so that interpretable models are needed. 
+Machine learning is a powerful tool for uncovering patterns in microbial communities, but its complexity often comes at the cost of interpretability. Many models prioritize accuracy over transparency, making their predictions difficult to understand. These scripts aim to extract meaningful biological insights, emphasizing the need for interpretable models. Though the use of artificial Neural Networks (ANNs), we model complex, non-linear relationships between environmental factors and viral community dynamics.
 
 - **What the [`03_ANN_time_series.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/03_ANNs_time_series.R) script does:**
 
