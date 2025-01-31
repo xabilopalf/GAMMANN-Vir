@@ -2,7 +2,7 @@
 # GAMANN-Vir
 
 <p align="center">
-  <img src="https://github.com/xabilopalf/GAMANN-Vir/blob/main/Logo_GAMANN-Vir_page-0001.jpg" width="450" height="450"  alt=" "/>
+  <img src="https://github.com/xabilopalf/GAMANN-Vir/blob/main/Logo_GAMANN-Vir.jpg" width="450" height="450"  alt=" "/>
 </p>
 
 
@@ -68,7 +68,9 @@ This process helps to identify and visualize any significant deviations in the d
   
   ## 3) Machine Learning: Artificial Neural Networks (ANNs)
 
-- **Why Use GAMs?**
+- **Why Use ANNs?**
+
+Machine learning is a powerful tool for uncovering patterns in microbial communities, but still is considered as a black box, and its complexity often comes at the cost of interpretability. Many models function as black boxes, prioritizing accuracy over transparency, making it difficult to understand. This scripts are intended to extract meaningful biological insights, so that interpretable models are needed. 
 
 - **What the [`03_ANN_time_series.R`](https://github.com/xabilopalf/GAMANN-Vir/blob/main/03_ANNs_time_series.R) script does:**
 
