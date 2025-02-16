@@ -15,7 +15,7 @@ The present document is part of a larger project that aims to analyze the tempor
 
   ## 1) Anomaly Analysis
 
-Anomaly analysis involves detecting data points or observations that deviate significantly from expected patterns or normal behavior in a dataset. It is commonly used in time-series data, such as environmental or sensor readings, to identify unusual fluctuations or outliers that might indicate significant events or errors.
+Anomaly analysis involves detecting data points or observations that deviate significantly from expected patterns or normal behavior in a dataset. It is commonly used in time-series data, such as environmental or sensor readings, to identify unusual fluctuations or outliers that might indicate significant events or errors. This method represents each variable as a series of anomalies on a logarithmic scale, compared to the long-term average of the data. Anomalies for a given month $$\( p'(t) \)$$ were determined by subtracting the value of each month from its interannual average  (Eq. 1), then averaging these differences to obtain the final annual anomaly ( $$\( p'annual \)$$ ; Eq. 2). 
 
 - **What the [`01_Anomaly_analysis.R`](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/01_Anomaly_analysis.R) script does:** 
 
@@ -23,6 +23,7 @@ Anomaly analysis involves detecting data points or observations that deviate sig
    - **Monthly Anomaly Calculation:** For each monthly observation, the anomaly is calculated as the base 10 logarithm of the ratio between the value of that month and the corresponding interannual mean for the same month.
 
        $$p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right)$$
+     
 
   Where:
   - $$\( p'(t) \)$$ is the anomaly for the given time $$\( t \)$$ ,
