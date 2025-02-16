@@ -15,15 +15,16 @@ The present document is part of a larger project that aims to analyze the tempor
 
   ## 1) Anomaly Analysis
 
-Anomaly analysis involves detecting data points or observations that deviate significantly from expected patterns or normal behavior in a dataset. It is commonly used in time-series data, such as environmental or sensor readings, to identify unusual fluctuations or outliers that might indicate significant events or errors. This method represents each variable as a series of anomalies on a logarithmic scale, compared to the long-term average of the data. Anomalies for a given month $$\( p'<sub>(t)</sub> \)$$ were determined by subtracting the value of each month from its interannual average  (Eq. 1), then averaging these differences to obtain the final annual anomaly ( $$\( p'<sub>annual</sub> \)$$ ; Eq. 2). 
+Anomaly analysis involves detecting data points or observations that deviate significantly from expected patterns or normal behavior in a dataset. It is commonly used in time-series data, such as environmental or sensor readings, to identify unusual fluctuations or outliers that might indicate significant events or errors. This method represents each variable as a series of anomalies on a logarithmic scale, compared to the long-term average of the data. Anomalies for a given month \( p'<sub>(t)</sub> \) were determined by subtracting the value of each month from its interannual average  (Eq. 1), then averaging these differences to obtain the final annual anomaly ( \( p'<sub>annual</sub> \) ; Eq. 2). 
 
 - **What the [`01_Anomaly_analysis.R`](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/01_Anomaly_analysis.R) script does:** 
 
    - **Monthly Calculation of Interannual Mean:** For each month of the year (January, February, etc.), the mean of all available observations across the years in the time series is calculated. For example, the mean of all January temperatures over the years.
    - **Monthly Anomaly Calculation:** For each monthly observation, the anomaly is calculated as the base 10 logarithm of the ratio between the value of that month and the corresponding interannual mean for the same month.
 
-       $$p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right)$$
-       $$p'<sub>annual</sub> = 1/12 &sum;<sub>t=12</sub><sup>12</sup> p'<sub>(t)</sub>$$ (2)
+       $$p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right)$$ (1)
+     
+       p'<sub>annual</sub> = 1/12 &sum;<sub>t=12</sub><sup>12</sup> p'<sub>(t)</sub> (2)
      
 
   Where:
