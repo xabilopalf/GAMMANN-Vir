@@ -22,10 +22,10 @@ Anomaly analysis involves detecting data points or observations that deviate sig
    - **Monthly Calculation of Interannual Mean:** For each month of the year (January, February, etc.), the mean of all available observations across the years in the time series is calculated. For example, the mean of all January temperatures over the years.
    - **Monthly Anomaly Calculation:** For each monthly observation, the anomaly is calculated as the base 10 logarithm of the ratio between the value of that month and the corresponding interannual mean for the same month.
 
-       $$p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right)$$  {1}
+       $$p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right)$$  (1)
 
-       p'_{annual} = \frac{1}{12} \sum_{t=1}^{12} p'(t)  {2} 
-
+       p'<sub>annual</sub> = 1/12 &sum;<sub>t=12</sub><sup>12</sup> p'<sub>(t)</sub>  (2)
+     
   Where:
   - $$\( p'(t) \)$$ is the anomaly for the given time $$\( t \)$$ ,
   - $$\( P(t) \)$$ is the observed value at time $$\( t \)$$ ,
