@@ -24,7 +24,7 @@ Anomaly analysis involves detecting data points or observations that deviate sig
 
        $$p'(t) = \log_{10} \left( \frac{P(t)}{\bar{P}} \right)$$ {1}
      
-       $$p'_{annual} = \frac{1}{12} \sum_{t=1}^{12} p'(t) \tag$$ {2}     
+       $$p'_{annual} = \frac{1}{12} \sum_{t=1}^{12} p'(t)$$ {2}     
 
   Where:
   - $$\( p'(t) \)$$ is the anomaly for the given time $$\( t \)$$ ,
