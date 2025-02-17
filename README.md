@@ -6,12 +6,14 @@
 </p>
 
 
+
 The present document is part of a larger project that aims to analyze the temporal patterns of microorganisms, including viruses, in a 20-year time series. The project is divided into three main parts: 
 
    1) [Anomaly analysis](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#1-anomaly-analysis)
    2) [Generalized Additive Models (GAMMs) ](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#2-gamms-generalized-additive-models)
    3) [Artificial Neural Networks (ANNs)](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#3-machine-learning-artificial-neural-networks-anns)
    4) [PCA and RAPDs Analysis](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#4-pca-and-rapds-analysis)
+
 
   ## 1) Anomaly Analysis
 
