@@ -2,7 +2,7 @@
 # GAMMANN-Vir
 
 <p align="center">
-  <img src="https://github.com/xabilopalf/GAMANN-Vir/blob/main/Logo_GAMMANN-Vir.jpg" width="450" height="450"  alt=" "/>
+  <img src="https://github.com/xabilopalf/GAMMANN-Vir/blob/main/Logo_GAMMANN-Vir.jpg" width="450" height="450"  alt=" "/>
 </p>
 
 
