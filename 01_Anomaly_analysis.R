@@ -16,7 +16,7 @@ setwd()
 # 2. Read the data from an Excel file
 data <- read_excel("data.xlsx", sheet = "R_version_table")
 
-# 3. Filter the data to remove the year 2023
+# 3. Filter the data to remove the year 2023 (or any data you might not use)
 data <- data %>% filter(Year != 2023)
 
 # 4. Remove rows with NA values in the DATE variable
@@ -39,13 +39,9 @@ anomaly.table <- function(df, no.log = c()) {
     
     # Calculate the monthly anomaly with conditional logic
     mutate(Anomaly_Monthly = ifelse(
-      Variable %in% no.log,                # If the variable is in no.log
-      Value - Mean_Monthly,                # No log10 for these variables
-      ifelse(
-        (Value - Mean_Monthly) > 0,        # Validate that it is not negative or zero
-        log10(Value - Mean_Monthly),      # Apply log10 if valid
-        NA                                # Assign NA if not valid
-      )
+      Variable %in% no.log, 
+      Value - Mean_Monthly, 
+      log10(Value / Mean_Monthly)  # Apply log10 if valid
     )) %>%
     ungroup() %>%
     
