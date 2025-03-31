@@ -42,32 +42,7 @@ envs <- pca_data[, c("Year", "Season", "Month")]
 envs$Year <- as.factor(envs$Year)
 
 
-# 3. Principal Component Analysis (PCA)
-# Remove categorical variables from pca_data
-pca_data <- pca_data[, !(names(pca_data) %in% c("Year", "Season", "Month"))]
-
-pca_data_scaled <- scale(pca_data)
-
-# Principal Component Analysis (PCA)
-pca_1 <- prcomp(pca_data_scaled, scale = TRUE)
-
-# PCA visualization
-fviz_pca_ind(pca_1, geom.ind = "point", col.ind = "#00449F", axes = c(1, 2), pointsize = 1.5)
-
-fviz_pca_ind(pca_1, col.ind = envs$Month, addEllipses = FALSE, legend.title = envs$Month)
-
-fviz_screeplot(pca_1, addlabels = TRUE, ylim = c(0, 40), linecolor = "#00449F", barfill = "#FEC707", barcolor = "#FEC707")
-
-
-# Create PCA biplot
-magma_colors <- rev(viridis::plasma(14)[1:12])
-PCA_biplot <- fviz_pca_biplot(pca_1, col.var = "#00449F", gradient.cols = magma_colors, repel = TRUE,
-                              geom.var = c("arrow", "text"), geom.ind = "point", pointsize = 3, 
-                              arrowsize = 1, col.ind = as.numeric(envs$Month)) + theme_minimal() ; PCA_biplot
-
-save_plot("PCA_plot.svg", PCA_biplot, base_height = 8, base_width = 10)
-
-# 4. NMDS analysis
+# 3. NMDS analysis
 set.seed(123)
 rapds.dist <- vegdist(pca_data, method = "bray", na.rm = TRUE)
 nmds_result <- metaMDS(rapds.dist, trace = 1, trymax = 200)
@@ -86,16 +61,8 @@ nmds_plot <- ggplot(nmds_coordinates, aes(x = NMDS1, y = NMDS2, color = Year)) +
   stat_ellipse(aes(group = Year, color = Year), level = 0.95, linetype = "dashed", size = 0.5) ; nmds_plot
 
 
-# 5. Compute correlation matrix and plot correlogram
-cor_matrix <- cor(pca_data, method = "pearson")
-corrplot_xabi <- ggcorrplot(cor_matrix, hc.order = TRUE, type = "lower", lab = TRUE, lab_size = 3.5, 
-                            method = "square", colors = c("#F46D43", "white", "#01665E"), 
-                            title = "Variable correlogram", ggtheme = theme_minimal())
-save_plot("Correlogram.svg", corrplot_xabi, base_height = 8, base_width = 10)
 
-
-
-# 6. RAPDs analysis
+# 4. RAPDs analysis
 
 # setear working directory
 setwd("~/Downloads/2024_Xabi/")
