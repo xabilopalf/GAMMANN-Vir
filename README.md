@@ -12,7 +12,7 @@ The present document is part of a larger project that aims to analyze the tempor
    1) [Anomaly analysis](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#1-anomaly-analysis)
    2) [Generalized Additive Models (GAMMs) ](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#2-gamms-generalized-additive-models)
    3) [Artificial Neural Networks (ANNs)](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#3-machine-learning-artificial-neural-networks-anns)
-   4) [PCA and RAPDs Analysis](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#4-pca-and-rapds-analysis)
+   4) [RAPDs Analysis](https://github.com/xabilopalf/GAMMANN-Vir/blob/main/README.md#4-rapds-analysis)
 
 
   ## 1) Anomaly Analysis
@@ -105,7 +105,7 @@ The script generates the following visualizations to analyze the performance of 
 -   [How to tune hyperparameters with R](https://www.projectpro.io/recipes/tune-hyper-parameters-grid-search-r)
 -   [Tuning hyperparameters in a neural network](https://f0nzie.github.io/machine_learning_compilation/tuning-hyperparameters-in-a-neural-network.html)
   
-  ## 4) PCA and RAPDs analysis
+  ## 4) RAPDs analysis
 
  For this part, we also carried out a general PCA and correlogram to get an overall view of the variables.
  
